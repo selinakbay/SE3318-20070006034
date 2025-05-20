@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<!--
+    This is a comprehensive Checkstyle configuration file for Java projects.
+    It includes various checks to enforce coding standards, improve code quality,
+    and ensure consistency.
+-->
+<module name="Checker">
+    <!--
+        Checks that each Java package has a Javadoc comment.
+        Violation: Missing Javadoc for package.
+    -->
+    <module name="JavadocPackage"/>
+
+    <!--
+        Checks for Size Violations.
+        Violation: Line is longer than 120 characters.
+    -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^import|^package.*"/>
+    </module>
+
+    <!--
+        Checks for whitespace around the 'equals' sign.
+        Violation: Whitespace around assignment operator.
+    -->
+    <module name="WhitespaceAround">
+        <property name="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, EQUAL, GE, GT, LAND, LE, LITERAL_NEW, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, SL, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, TYPE_EXTENSION_AND"/>
+    </module>
+
+    <!--
+        Checks for unnecessary parentheses around expressions.
+        Violation: Parentheses around expression.
+    -->
+    <module name="ParenPad"/>
+
+    <!--
+        Checks for correct indentation of code.
+        Violation: Incorrect indentation.
+    -->
+    <module name="Indentation">
+        <property name="basicOffset" value="4"/>
+        <property name="braceAdjustment" value="0"/>
+        <property name="caseIndent" value="4"/>
+        <property name="throwsIndent" value="4"/>
+        <property name="arrayInitIndent" value="4"/>
+        <property name="lineWrappingIndentation" value="8"/>
+    </module>
+
+    <!--
+        Checks that there are no unused imports.
+        Violation: Unused import.
+    -->
+    <module name="UnusedImports"/>
+
+    <!--
+        Checks for redundant imports.
+        Violation: Redundant import.
+    -->
+    <module name="RedundantImport"/>
+
+    <!--
+        Checks for the use of star imports.
+        Violation: Star import used.
+    -->
+    <module name="AvoidStarImport"/>
+
+    <!--
+        Checks for multiple variable declarations in one line.
+        Violation: Multiple variable declarations in one line.
+    -->
+    <module name="MultipleVariableDeclarations"/>
+
+    <!--
+        Checks for the array type style.
+        Violation: Array type style.
+    -->
+    <module name="ArrayTypeStyle"/>
+
+    <!--
+        Checks that switch statements have a 'default' case.
+        Violation: Missing 'default' case in switch statement.
+    -->
+    <module name="MissingSwitchDefault"/>
+
+    <!--
+        Checks for fall-through in switch statements.
+        Violation: Switch statement fall-through.
+    -->
+    <module name="FallThrough"/>
+
+    <!--
+        Checks for magic numbers (literal numbers that are not constants).
+        Violation: Magic number.
+    -->
+    <module name="MagicNumber"/>
+
+    <!--
+        Checks the complexity of boolean expressions.
+        Violation: Boolean expression complexity.
+    -->
+    <module name="BooleanExpressionComplexity">
+        <property name="max" value="3"/> </module>
+
+    <!--
+        Checks the depth of nested blocks.
+        Violation: Nested block depth.
+    -->
+    <module name="NestedBlockDepth">
+        <property name="max" value="3"/> </module>
+
+    <!--
+        Checks for empty statements.
+        Violation: Empty statement.
+    -->
+    <module name="EmptyStatement"/>
+
+    <!--
+        Checks for empty blocks.
+        Violation: Empty block.
+    -->
+    <module name="EmptyBlock"/>
+
+    <!--
+        Checks that there are no redundant 'return' statements.
+        Violation: Redundant 'return' statement.
+    -->
+    <module name="RedundantReturn"/>
+
+    <module name="TreeWalker">
+        <!--
+            Checks that each Java type has a Javadoc comment.
+            Violation: Missing Javadoc for class/interface/enum.
+        -->
+        <module name="JavadocType"/>
+
+        <!--
+            Checks that each Java method has a Javadoc comment.
+            Violation: Missing Javadoc for method.
+        -->
+        <module name="JavadocMethod"/>
+
+        <!--
+            Checks that each Java variable (field) has a Javadoc comment.
+            Violation: Missing Javadoc for variable.
+        -->
+        <module name="JavadocVariable"/>
+
+        <!--
+            Checks for correct naming conventions for local variables.
+            Violation: Incorrect local variable name.
+        -->
+        <module name="LocalVariableName"/>
+
+        <!--
+            Checks for correct naming conventions for method parameters.
+            Violation: Incorrect parameter name.
+        -->
+        <module name="ParameterName"/>
+
+        <!--
+            Checks for correct naming conventions for member variables (fields).
+            Violation: Incorrect member variable name.
+        -->
+        <module name="MemberName"/>
+
+        <!--
+            Checks for correct naming conventions for methods.
+            Violation: Incorrect method name.
+        -->
+        <module name="MethodName"/>
+
+        <!--
+            Checks for correct naming conventions for types (classes, interfaces, enums).
+            Violation: Incorrect type name.
+        -->
+        <module name="TypeName"/>
+
+        <!--
+            Checks for correct naming conventions for constants (static final fields).
+            Violation: Incorrect constant name.
+        -->
+        <module name="ConstantName"/>
+
+        <!--
+            Checks for correct naming conventions for static variables.
+            Violation: Incorrect static variable name.
+        -->
+        <module name="StaticVariableName"/>
+
+        <!--
+            Checks that curly braces are on the same line as the statement.
+            Violation: Left curly brace on new line.
+        -->
+        <module name="LeftCurly"/>
+
+        <!--
+            Checks that curly braces are on a new line after the block.
+            Violation: Right curly brace not on new line.
+        -->
+        <module name="RightCurly"/>
+
+        <!--
+            Checks that curly braces are used for control constructs (if, else, for, while, do).
+            Violation: Missing curly braces.
+        -->
+        <module name="NeedBraces"/>
+
+        <!--
+            Checks that method parameters are padded correctly.
+            Violation: Incorrect padding for method parameters.
+        -->
+        <module name="MethodParamPad"/>
+
+        <!--
+            Checks for no whitespace after certain tokens.
+            Violation: Whitespace after token.
+        -->
+        <module name="NoWhitespaceAfter">
+            <property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS"/>
+        </module>
+
+        <!--
+            Checks for no whitespace before certain tokens.
+            Violation: Whitespace before token.
+        -->
+        <module name="NoWhitespaceBefore">
+            <property name="tokens" value="COMMA, SEMI, POST_DEC, POST_INC"/>
+        </module>
+
+        <!--
+            Checks that fields are private unless necessary.
+            Violation: Non-private field.
+        -->
+        <module name="VisibilityModifier">
+            <property name="packageAllowed" value="true"/>
+            <property name="protectedAllowed" value="true"/>
+        </module>
+
+        <!--
+            Checks that method parameters are declared final.
+            Violation: Non-final method parameter.
+        -->
+        <module name="FinalParameters"/>
+
+        <!--
+            Checks for a specific import order.
+            Violation: Incorrect import order.
+        -->
+        <module name="CustomImportOrder">
+            <property name="customImportOrderRules" value="STATIC###THIRD_PARTY_PACKAGE###SPECIAL_IMPORTS###STANDARD_JAVA_PACKAGE###LOCAL_PACKAGE"/>
+            <property name="standardPackageRegExp" value="^java\."/>
+            <property name="specialImportsRegExp" value="^javax\."/>
+            <property name="thirdPartyPackageRegExp" value="^org\."/>
+            <property name="sortModulesCustomImportOrder" value="true"/>
+        </module>
+
+    </module>
+</module>
